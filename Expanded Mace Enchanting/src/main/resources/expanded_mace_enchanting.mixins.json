@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.smushytaco.expanded_mace_enchanting.mixins",
+  "compatibilityLevel": "JAVA_${java}",
+  "mixins": [
+    "MaceModification"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
