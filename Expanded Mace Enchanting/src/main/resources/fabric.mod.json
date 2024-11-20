@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "expanded_mace_enchanting",
+  "version": "${version}",
+  "name": "Expanded Mace Enchanting",
+  "description": "This mod allows you to use Knockback, Looting, Impaling, and all other sword enchantment types on a mace while also mixing mutually exclusive mace enchantments.",
+  "authors": [
+    "SmushyTaco"
+  ],
+  "contact": {
+    "homepage": "https://www.smushytaco.com/",
+    "issues": "https://www.curseforge.com/minecraft/mc-mods/expanded-mace-enchanting/issues/",
+    "sources": "https://github.com/SmushyTaco/Expanded-Mace-Enchanting/"
+  },
+  "license": "GNU Lesser General Public License version 3 (LGPLv3)",
+  "icon": "assets/expanded_mace_enchanting/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.smushytaco.expanded_mace_enchanting.ExpandedMaceEnchanting"
+      }
+    ],
+    "modmenu": [
+      "com.smushytaco.expanded_mace_enchanting.configuration_support.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "expanded_mace_enchanting.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-api": ">=${fabric_api}",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}",
+    "cloth-config2": ">=${clothconfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${modmenu}"
+  }
+}
