@@ -1,10 +1,10 @@
 {
-  "text.autoconfig.expanded_mace_enchanting.title": "Expanded Mace Enchanting Configuration",
-  "text.autoconfig.expanded_mace_enchanting.option.canUseKnockbackOnMace": "Can Use Knockback On Mace",
-  "text.autoconfig.expanded_mace_enchanting.option.canUseLootingOnMace": "Can Use Looting On Mace",
-  "text.autoconfig.expanded_mace_enchanting.option.canUseSharpnessOnMace": "Can Use Sharpness On Mace",
-  "text.autoconfig.expanded_mace_enchanting.option.canUseImpalingOnMace": "Can Use Impaling On Mace",
-  "text.autoconfig.expanded_mace_enchanting.option.densityAndBreachCanBeMixed": "Density And Breach Can Be Mixed",
-  "text.autoconfig.expanded_mace_enchanting.option.densityAndOtherWeaponEnchantmentTypesCanBeMixed": "Density And Other Weapon Enchantment Types Can Be Mixed",
-  "text.autoconfig.expanded_mace_enchanting.option.breachAndOtherWeaponEnchantmentTypesCanBeMixed": "Breach And Other Weapon Enchantment Types Can Be Mixed"
+  "text.config.expanded_mace_enchanting.title": "Expanded Mace Enchanting Configuration",
+  "text.config.expanded_mace_enchanting.option.canUseKnockbackOnMace": "Can Use Knockback On Mace",
+  "text.config.expanded_mace_enchanting.option.canUseLootingOnMace": "Can Use Looting On Mace",
+  "text.config.expanded_mace_enchanting.option.canUseSharpnessOnMace": "Can Use Sharpness On Mace",
+  "text.config.expanded_mace_enchanting.option.canUseImpalingOnMace": "Can Use Impaling On Mace",
+  "text.config.expanded_mace_enchanting.option.densityAndBreachCanBeMixed": "Density And Breach Can Be Mixed",
+  "text.config.expanded_mace_enchanting.option.densityAndOtherWeaponEnchantmentTypesCanBeMixed": "Density And Other Weapon Enchantment Types Can Be Mixed",
+  "text.config.expanded_mace_enchanting.option.breachAndOtherWeaponEnchantmentTypesCanBeMixed": "Breach And Other Weapon Enchantment Types Can Be Mixed"
 }
