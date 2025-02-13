@@ -1,0 +1,10 @@
+{
+  "text.config.expanded_mace_enchanting.title": "重锤附魔扩展 配置界面",
+  "text.config.expanded_mace_enchanting.option.canUseKnockbackOnMace": "允许重锤附魔击退",
+  "text.config.expanded_mace_enchanting.option.canUseLootingOnMace": "允许重锤附魔抢夺",
+  "text.config.expanded_mace_enchanting.option.canUseSharpnessOnMace": "允许重锤附魔锋利",
+  "text.config.expanded_mace_enchanting.option.canUseImpalingOnMace": "允许重锤附魔穿刺",
+  "text.config.expanded_mace_enchanting.option.densityAndBreachCanBeMixed": "致密与破甲附魔不再冲突",
+  "text.config.expanded_mace_enchanting.option.densityAndOtherWeaponEnchantmentTypesCanBeMixed": "致密与其他武器类附魔不再冲突",
+  "text.config.expanded_mace_enchanting.option.breachAndOtherWeaponEnchantmentTypesCanBeMixed": "破甲与其他武器类附魔不再冲突"
+}
