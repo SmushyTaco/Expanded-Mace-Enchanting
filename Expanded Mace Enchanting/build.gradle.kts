@@ -115,20 +115,20 @@ tasks {
         disableVersionDetection()
         apiToken = env.fetch("CURSEFORGE_TOKEN", "")
         val file = upload(1144774, remapJar)
-        file.displayName = "[${project.extra["minecraft_version"] as String}] Expanded Mace Enchanting"
+        file.displayName = "[${minecraftVersion.get()}] Expanded Mace Enchanting"
         file.addEnvironment("Client", "Server")
         file.changelog = ""
         file.releaseType = "release"
         file.addModLoader("Fabric")
-        file.addGameVersion(project.extra["minecraft_version"] as String)
+        file.addGameVersion(minecraftVersion.get())
     }
 }
 modrinth {
     token.set(env.fetch("MODRINTH_TOKEN", ""))
     projectId.set("expanded-mace-enchanting")
     uploadFile.set(tasks.remapJar)
-    gameVersions.addAll(project.extra["minecraft_version"] as String)
-    versionName.set("[${project.extra["minecraft_version"] as String}] Expanded Mace Enchanting")
+    gameVersions.addAll(minecraftVersion.get())
+    versionName.set("[${minecraftVersion.get()}] Expanded Mace Enchanting")
     dependencies {
         required.project("fabric-api", "fabric-language-kotlin", "owo-lib")
         optional.project("modmenu")
