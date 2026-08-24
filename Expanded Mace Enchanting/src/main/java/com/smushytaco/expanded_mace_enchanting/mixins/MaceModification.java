@@ -12,23 +12,23 @@ import java.util.Set;
 @Mixin(Enchantment.class)
 public abstract class MaceModification {
     @ModifyReturnValue(method = "canEnchant", at = @At("RETURN"))
-    public boolean isAcceptableItem(boolean original, ItemStack stack) {
+    public boolean isAcceptableItem(boolean original, ItemStack itemStack) {
         Enchantment enchantment = (Enchantment) (Object) this;
         if (ExpandedMaceEnchanting.INSTANCE.isSameEnchantment(enchantment, Enchantments.KNOCKBACK)) {
-            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseKnockbackOnMace() || !(stack.getItem() instanceof MaceItem)) return original;
+            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseKnockbackOnMace() || !(itemStack.getItem() instanceof MaceItem)) return original;
             return true;
         }  else if (ExpandedMaceEnchanting.INSTANCE.isSameEnchantment(enchantment, Enchantments.LOOTING)) {
-            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseLootingOnMace() || !(stack.getItem() instanceof MaceItem)) return original;
+            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseLootingOnMace() || !(itemStack.getItem() instanceof MaceItem)) return original;
             return true;
         } else if (ExpandedMaceEnchanting.INSTANCE.isSameEnchantment(enchantment, Enchantments.SHARPNESS)) {
-            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseSharpnessOnMace() || !(stack.getItem() instanceof MaceItem)) return original;
+            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseSharpnessOnMace() || !(itemStack.getItem() instanceof MaceItem)) return original;
             return true;
         } else if (ExpandedMaceEnchanting.INSTANCE.isSameEnchantment(enchantment, Enchantments.IMPALING)) {
-            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseImpalingOnMace() || !(stack.getItem() instanceof MaceItem)) return original;
+            if (!ExpandedMaceEnchanting.INSTANCE.getConfig().getCanUseImpalingOnMace() || !(itemStack.getItem() instanceof MaceItem)) return original;
             return true;
         }
         return original;
     }
     @ModifyReturnValue(method = "areCompatible", at = @At("RETURN"))
-    private static boolean hookCanBeCombined(boolean original, Holder<Enchantment> first, Holder<Enchantment> second) { return original || ExpandedMaceEnchanting.INSTANCE.getConfig().getDensityAndBreachCanBeMixed() && ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.DENSITY, Enchantments.BREACH)) || ExpandedMaceEnchanting.INSTANCE.getConfig().getDensityAndOtherWeaponEnchantmentTypesCanBeMixed() && (ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.DENSITY, Enchantments.SMITE)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.DENSITY, Enchantments.BANE_OF_ARTHROPODS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.DENSITY, Enchantments.SHARPNESS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.DENSITY, Enchantments.IMPALING))) || ExpandedMaceEnchanting.INSTANCE.getConfig().getBreachAndOtherWeaponEnchantmentTypesCanBeMixed() && (ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.BREACH, Enchantments.SMITE)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.BREACH, Enchantments.BANE_OF_ARTHROPODS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.BREACH, Enchantments.SHARPNESS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(first, second, Set.of(Enchantments.BREACH, Enchantments.IMPALING))); }
+    private static boolean hookCanBeCombined(boolean original, Holder<Enchantment> enchantment, Holder<Enchantment> other) { return original || ExpandedMaceEnchanting.INSTANCE.getConfig().getDensityAndBreachCanBeMixed() && ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.DENSITY, Enchantments.BREACH)) || ExpandedMaceEnchanting.INSTANCE.getConfig().getDensityAndOtherWeaponEnchantmentTypesCanBeMixed() && (ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.DENSITY, Enchantments.SMITE)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.DENSITY, Enchantments.BANE_OF_ARTHROPODS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.DENSITY, Enchantments.SHARPNESS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.DENSITY, Enchantments.IMPALING))) || ExpandedMaceEnchanting.INSTANCE.getConfig().getBreachAndOtherWeaponEnchantmentTypesCanBeMixed() && (ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.BREACH, Enchantments.SMITE)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.BREACH, Enchantments.BANE_OF_ARTHROPODS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.BREACH, Enchantments.SHARPNESS)) || ExpandedMaceEnchanting.INSTANCE.canCombineEnchantments(enchantment, other, Set.of(Enchantments.BREACH, Enchantments.IMPALING))); }
 }
